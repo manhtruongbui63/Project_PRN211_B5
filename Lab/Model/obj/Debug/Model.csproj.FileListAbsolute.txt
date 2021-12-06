@@ -1,0 +1,12 @@
+C:\Users\taoph\Desktop\Project_PRN211_B5\Lab\Model\bin\Debug\Model.dll.config
+C:\Users\taoph\Desktop\Project_PRN211_B5\Lab\Model\bin\Debug\Model.dll
+C:\Users\taoph\Desktop\Project_PRN211_B5\Lab\Model\bin\Debug\Model.pdb
+C:\Users\taoph\Desktop\Project_PRN211_B5\Lab\Model\bin\Debug\EntityFramework.dll
+C:\Users\taoph\Desktop\Project_PRN211_B5\Lab\Model\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\taoph\Desktop\Project_PRN211_B5\Lab\Model\bin\Debug\EntityFramework.xml
+C:\Users\taoph\Desktop\Project_PRN211_B5\Lab\Model\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\taoph\Desktop\Project_PRN211_B5\Lab\Model\obj\Debug\Model.csproj.AssemblyReference.cache
+C:\Users\taoph\Desktop\Project_PRN211_B5\Lab\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+C:\Users\taoph\Desktop\Project_PRN211_B5\Lab\Model\obj\Debug\Model.csproj.CopyComplete
+C:\Users\taoph\Desktop\Project_PRN211_B5\Lab\Model\obj\Debug\Model.dll
+C:\Users\taoph\Desktop\Project_PRN211_B5\Lab\Model\obj\Debug\Model.pdb
