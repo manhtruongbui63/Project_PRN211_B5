@@ -14,7 +14,7 @@ namespace Model.EF
         {
             COURSE_SCHEDULES = new HashSet<COURSE_SCHEDULES>();
             Grades = new HashSet<Grade>();
-            STUDENTS = new HashSet<STUDENT>();
+            STUDENT_COURSE = new HashSet<STUDENT_COURSE>();
         }
 
         [Key]
@@ -49,6 +49,6 @@ namespace Model.EF
         public virtual ICollection<Grade> Grades { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<STUDENT> STUDENTS { get; set; }
+        public virtual ICollection<STUDENT_COURSE> STUDENT_COURSE { get; set; }
     }
 }

@@ -1,0 +1,62 @@
+﻿@model List<Model.Model.CourseSchedulesByStudentId>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h2>Course Schedules</h2>
+    <table class="table">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Date</th>
+                    <th>Slot</th>
+                    <th>Room</th>
+                    <th>Instructor</th>
+                    <th>GroupName</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>-</td>
+                    <td>
+                        <p>@item.TeachingDate.Value.DayOfWeek</p>
+                        @item.TeachingDate.Value.ToString("dd/MM/yyyy")
+                    </td>
+                    <td>@item.Slot</td>
+                    <td>@item.RoomId</td>
+                    <td>@item.InstructorLastName</td>
+                    <td>@item.SubjectCode - @item.CourseCode</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+
+    @*<table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>CourseCode</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.CourseCode</td>
+                </tr>
+                }
+            </tbody>
+        </table>*@
+
+
+</div>
+
+
+
+

@@ -53,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dao\COURSE_SCHEDULES_Dao.cs" />
     <Compile Include="EF\CAMPUS.cs" />
     <Compile Include="EF\COURS.cs" />
     <Compile Include="EF\COURSE_SCHEDULES.cs" />
@@ -64,17 +65,18 @@
     <Compile Include="EF\ROLL_CALL_BOOKS.cs" />
     <Compile Include="EF\ROOM.cs" />
     <Compile Include="EF\STUDENT.cs" />
+    <Compile Include="EF\STUDENT_COURSE.cs" />
     <Compile Include="EF\SUBJECT.cs" />
+    <Compile Include="EF\sysdiagram.cs" />
     <Compile Include="EF\TERM.cs" />
+    <Compile Include="Model\CourseSchedulesByStudentId.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.Config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Dao\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

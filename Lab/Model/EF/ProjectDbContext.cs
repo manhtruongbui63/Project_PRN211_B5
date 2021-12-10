@@ -21,8 +21,10 @@ namespace Model.EF
         public virtual DbSet<INSTRUCTOR> INSTRUCTORS { get; set; }
         public virtual DbSet<ROLL_CALL_BOOKS> ROLL_CALL_BOOKS { get; set; }
         public virtual DbSet<ROOM> ROOMS { get; set; }
+        public virtual DbSet<STUDENT_COURSE> STUDENT_COURSE { get; set; }
         public virtual DbSet<STUDENT> STUDENTS { get; set; }
         public virtual DbSet<SUBJECT> SUBJECTS { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TERM> TERMS { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -33,9 +35,9 @@ namespace Model.EF
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<COURS>()
-                .HasMany(e => e.STUDENTS)
-                .WithMany(e => e.COURSES)
-                .Map(m => m.ToTable("STUDENT_COURSE").MapLeftKey("CourseId").MapRightKey("StudentId"));
+                .HasMany(e => e.STUDENT_COURSE)
+                .WithRequired(e => e.COURS)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<GRADETITLE>()
                 .HasMany(e => e.Grades)
@@ -45,6 +47,11 @@ namespace Model.EF
 
             modelBuilder.Entity<STUDENT>()
                 .HasMany(e => e.Grades)
+                .WithRequired(e => e.STUDENT)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<STUDENT>()
+                .HasMany(e => e.STUDENT_COURSE)
                 .WithRequired(e => e.STUDENT)
                 .WillCascadeOnDelete(false);
 

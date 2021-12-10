@@ -14,7 +14,7 @@ namespace Model.EF
         {
             Grades = new HashSet<Grade>();
             ROLL_CALL_BOOKS = new HashSet<ROLL_CALL_BOOKS>();
-            COURSES = new HashSet<COURS>();
+            STUDENT_COURSE = new HashSet<STUDENT_COURSE>();
         }
 
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
@@ -40,6 +40,6 @@ namespace Model.EF
         public virtual ICollection<ROLL_CALL_BOOKS> ROLL_CALL_BOOKS { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<COURS> COURSES { get; set; }
+        public virtual ICollection<STUDENT_COURSE> STUDENT_COURSE { get; set; }
     }
 }
