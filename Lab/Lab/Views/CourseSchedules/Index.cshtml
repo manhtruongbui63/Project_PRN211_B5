@@ -1,4 +1,4 @@
-﻿@model List<Model.Model.CourseSchedulesByStudentId>
+﻿@model List<Model.EF.COURSE_SCHEDULES>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -6,7 +6,31 @@
 
 <div>
     <h2>Course Schedules</h2>
-    <table class="table">
+
+    <table>
+        <thead>
+            <tr>
+                <th>Teaching Date</th>
+                <th>Slot</th>
+                <th>RoomID</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>@item.TeachingDate.Value.ToString("dd/MM/yyyy")</td>
+                <td>@item.Slot</td>
+                <td>@item.RoomId</td>
+                <td>@item.Description</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+
+
+    @*<table class="table">
             <thead>
                 <tr>
                     <th>No</th>
@@ -34,7 +58,7 @@
                 </tr>
                 }
             </tbody>
-        </table>
+        </table>*@
 
     @*<table class="table">
             <thead>

@@ -53,7 +53,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dao\Course_Dao.cs" />
     <Compile Include="Dao\COURSE_SCHEDULES_Dao.cs" />
+    <Compile Include="Dao\StudentCourse_Dao.cs" />
     <Compile Include="EF\CAMPUS.cs" />
     <Compile Include="EF\COURS.cs" />
     <Compile Include="EF\COURSE_SCHEDULES.cs" />
@@ -70,6 +72,8 @@
     <Compile Include="EF\sysdiagram.cs" />
     <Compile Include="EF\TERM.cs" />
     <Compile Include="Model\CourseSchedulesByStudentId.cs" />
+    <Compile Include="Model\ListCourse.cs" />
+    <Compile Include="Model\ListStudentCourse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

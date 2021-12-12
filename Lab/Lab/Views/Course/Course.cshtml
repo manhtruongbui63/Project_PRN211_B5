@@ -1,0 +1,49 @@
+﻿@model List<Model.Model.ListCourse>
+@{
+    ViewBag.Title = "Course";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    //int n = ViewBag.Num;
+}
+
+
+<h2>Course</h2>
+
+<table class="table table-bordered">
+    <thead class="">
+        <tr class="" style="background-color: #6b90da">
+            <th>Schedule ID</th>
+            <th>Date</th>
+            <th>Slot</th>
+            <th>Room</th>
+            <th>Instructor</th>
+            <th>Group Name</th>
+            <th>Attedance Status</th>
+            <th>Lecturer's Comment</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            var name = item.FirstName + item.NameInstructor.Substring(0, 1) + item.MidName.Substring(0, 1);
+        <tr>
+            <td>@item.C_S</td>
+            <td>@item.Date.Value.DayOfWeek - @item.Date.Value.ToString("dd/MM/yyyy")</td>
+            <td>@item.Slot</td>
+            <td>@item.Room</td>
+            <td>@name</td>
+            <td>@item.CodeSubject - @item.CodeCourse</td>
+            @if (item.IsStatus.Equals(true)) 
+            { 
+                <td style="color:red">Absent</td>
+            }
+            else { 
+            <td style="color:green">Present</td>
+            }
+            @*<td>@(item.IsStatus.Equals(true) ? "Absent" : "Present")</td>*@
+            <td>@item.Comment</td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+<p>Absent: @ViewBag.Num % absent so far(@ViewBag.b absent on @ViewBag.a total)</p>

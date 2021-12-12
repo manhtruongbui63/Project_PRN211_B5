@@ -1,0 +1,12 @@
+﻿@model List<Model.Model.ListStudentCourse>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+@foreach(var item in Model)
+{
+    <a class="" href="/Course/@item.ID">@item.NameSubject (@item.CodeSubject) - (@item.CodeCourse)</a>
+}

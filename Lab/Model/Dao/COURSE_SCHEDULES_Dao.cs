@@ -16,26 +16,33 @@ namespace Model.Dao
             db = new ProjectDbContext();
         }
 
-        public List<CourseSchedulesByStudentId> GetItem(int id)
+        public List<COURSE_SCHEDULES> Get_Sechedule(int id)
         {
-            var st = db.STUDENTS.Find(id);
-            var model = (from cs in db.COURSE_SCHEDULES
-                         join c in db.COURSES on cs.CourseId equals c.CourseId
-                         join r in db.ROOMS on cs.RoomId equals r.RoomId
-                         join s in db.SUBJECTS on c.SubjectId equals s.SubjectId
-                         join i in db.INSTRUCTORS on c.InstructorId equals i.InstructorId
-                         select new CourseSchedulesByStudentId()
-                         {
-                             CourseCode = c.CourseCode,
-                             Slot = cs.Slot,
-                             TeachingDate = cs.TeachingDate,
-                             InstructorLastName = i.InstructorLastName,
-                             SubjectCode = s.SubjectCode,
-                             RoomId = r.RoomCode,
-                         }
-                         );
-            return model.Where(x => x.StudentId == id).ToList();
+            id = 1;
+            var model= db.COURSE_SCHEDULES.Where(x => x.CourseId == id).ToList();
+            return model;
         }
+
+        //public List<CourseSchedulesByStudentId> GetItem(int id)
+        //{
+        //    var st = db.STUDENTS.Find(id);
+        //    var model = (from cs in db.COURSE_SCHEDULES
+        //                 join c in db.COURSES on cs.CourseId equals c.CourseId
+        //                 join r in db.ROOMS on cs.RoomId equals r.RoomId
+        //                 join s in db.SUBJECTS on c.SubjectId equals s.SubjectId
+        //                 join i in db.INSTRUCTORS on c.InstructorId equals i.InstructorId
+        //                 select new CourseSchedulesByStudentId()
+        //                 {
+        //                     CourseCode = c.CourseCode,
+        //                     Slot = cs.Slot,
+        //                     TeachingDate = cs.TeachingDate,
+        //                     InstructorLastName = i.InstructorLastName,
+        //                     SubjectCode = s.SubjectCode,
+        //                     RoomId = r.RoomCode,
+        //                 }
+        //                 );
+        //    return model.Where(x => x.StudentId == id).ToList();
+        //}
 
 
         //public List<CourseSchedulesByStudentId> GetItem(int id)

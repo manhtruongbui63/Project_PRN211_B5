@@ -7,13 +7,13 @@ using System.Web.Mvc;
 
 namespace Lab.Controllers
 {
-    public class CourseSchedulesController : Controller
+    public class StudentController : Controller
     {
-        // GET: CourseSchedules
+        // GET: Student
         public ActionResult Index()
         {
-            var dao = new COURSE_SCHEDULES_Dao();
-            var model = dao.Get_Sechedule(1);
+            var dao = new StudentCourse_Dao();
+            var model = dao.GetCourse(1);
             return View(model);
         }
     }
