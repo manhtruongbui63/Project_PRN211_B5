@@ -27,7 +27,10 @@ namespace Model.Dao
                              StudentID = s.StudentId,
                              CodeCourse = c.CourseCode,
                              NameSubject = sub.SubjectName,
-                             CodeSubject = sub.SubjectCode
+                             CodeSubject = sub.SubjectCode,
+                             LastName = s.LastName,
+                             FirstName = s.FirstName,
+                             MiddName = s.MidName
                          }
                          );
             return model.Where(x => x.StudentID == id).ToList();

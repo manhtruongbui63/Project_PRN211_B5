@@ -2,11 +2,31 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    
 }
 
-<h2>Index</h2>
+<div class="title">
+    <h3>View attendance for Bùi Mạnh Trường (TruongBMSE06055)</h3>
+</div>
 
-@foreach(var item in Model)
-{
-    <a class="" href="/Course/@item.ID">@item.NameSubject (@item.CodeSubject) - (@item.CodeCourse)</a>
-}
+<div class="row">
+    <div class="col-md-6">
+        <table class="table table-bordered">
+            <thead>
+                <tr style="background-color: #6b90da">
+                    <th>COURSE</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            <a class="" href="/Course/@item.ID">@item.NameSubject (@item.CodeSubject) - (@item.CodeCourse)</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

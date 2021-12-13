@@ -6,44 +6,54 @@
 }
 
 
-<h2>Course</h2>
+<div class="row">
+    <div class="col-md-8">
+        <table class="table table-bordered">
+            <thead class="">
+                <tr class="" style="background-color: #6b90da;">
+                    <th style="text-align:center">NO</th>
+                    <th>Date</th>
+                    <th style="text-align:center">Slot</th>
+                    <th style="text-align:center">Room</th>
+                    <th>Instructor</th>
+                    <th>Group Name</th>
+                    <th style="text-align:center">Attedance Status</th>
+                    <th>Lecturer's Comment</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.Count; i++)
+                {
+                    var name = Model[i].FirstName + Model[i].NameInstructor.Substring(0, 1) + Model[i].MidName.Substring(0, 1);
+                    var no = i + 1;
+                    <tr>
+                        <td style="text-align:center">@no</td>
+                        <td>@Model[i].Date.Value.DayOfWeek - @Model[i].Date.Value.ToString("dd/MM/yyyy")</td>
+                        <td style="text-align:center">@Model[i].Slot</td>
+                        <td style="text-align:center">@Model[i].Room</td>
+                        <td>@name</td>
+                        <td>@Model[i].CodeSubject - @Model[i].CodeCourse</td>
+                        @if (Model[i].IsStatus.Equals(true))
+                        {
+                            <td style="color:red ;text-align:center">Absent</td>
+                        }
+                        else
+                        {
+                            <td style="color: green; text-align: center">Present</td>
+                        }
+                        @*//<td>@(item.IsStatus.Equals(true) ? "Absent" : "Present")</td>*@
+                        <td>@Model[i].Comment</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
 
-<table class="table table-bordered">
-    <thead class="">
-        <tr class="" style="background-color: #6b90da">
-            <th>Schedule ID</th>
-            <th>Date</th>
-            <th>Slot</th>
-            <th>Room</th>
-            <th>Instructor</th>
-            <th>Group Name</th>
-            <th>Attedance Status</th>
-            <th>Lecturer's Comment</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            var name = item.FirstName + item.NameInstructor.Substring(0, 1) + item.MidName.Substring(0, 1);
-        <tr>
-            <td>@item.C_S</td>
-            <td>@item.Date.Value.DayOfWeek - @item.Date.Value.ToString("dd/MM/yyyy")</td>
-            <td>@item.Slot</td>
-            <td>@item.Room</td>
-            <td>@name</td>
-            <td>@item.CodeSubject - @item.CodeCourse</td>
-            @if (item.IsStatus.Equals(true)) 
-            { 
-                <td style="color:red">Absent</td>
-            }
-            else { 
-            <td style="color:green">Present</td>
-            }
-            @*<td>@(item.IsStatus.Equals(true) ? "Absent" : "Present")</td>*@
-            <td>@item.Comment</td>
-        </tr>
-        }
-    </tbody>
-</table>
+        <p style="font-size:18px; font-weight:700"> ABSENT: @ViewBag.Num % ABSENT SO FAR(@ViewBag.b ABSENT ON @ViewBag.a TOTAL)</p>
 
-<p>Absent: @ViewBag.Num % absent so far(@ViewBag.b absent on @ViewBag.a total)</p>
+    </div>
+</div>
+<hr />
+
+
+
+

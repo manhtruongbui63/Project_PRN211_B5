@@ -37,7 +37,7 @@ namespace Model.Dao
                              CodeSubject = s.SubjectCode,
                              CodeCourse = c.CourseCode,
                              IsStatus = r_c_b.IsAbsent,
-                             Comment = r_c_b.Comment,
+                             Comment = r_c_b.Comment
                          }
                          );
             var m = model.Where(x => x.Id == id).OrderBy(x => x.Date).ToList();
