@@ -13,7 +13,7 @@ namespace Lab.Controllers
         public ActionResult Index()
         {
             var dao = new COURSE_SCHEDULES_Dao();
-            var model = dao.Get_Sechedule(1);
+            var model = dao.Get_Sechedule(33);
             return View(model);
         }
     }

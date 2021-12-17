@@ -13,9 +13,10 @@ namespace Lab.Controllers
         public ActionResult Index()
         {
             var dao = new StudentCourse_Dao();
-            // id=1 - Mặc định là sinh viên đầu tiên
+            // id=1 Mặc định là sinh viên đầu tiên
             var model = dao.GetCourse(1);
-            
+            var name = model.Select(x => x.FirstName).ToList();
+            ViewBag.Name = name[0];
             return View(model);
         }
     }

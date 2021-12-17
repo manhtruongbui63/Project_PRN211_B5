@@ -23,10 +23,11 @@ namespace Model.Dao
                          join r in db.ROOMS on c_s.RoomId equals r.RoomId
                          join i in db.INSTRUCTORS on c.InstructorId equals i.InstructorId
                          join s in db.SUBJECTS on c.SubjectId equals s.SubjectId
-                         join r_c_b in db.ROLL_CALL_BOOKS on c_s.TeachingScheduleId equals r_c_b.TeachingScheduleId where r_c_b.StudentId ==1
+                         join r_c_b in db.ROLL_CALL_BOOKS on c_s.TeachingScheduleId equals r_c_b.TeachingScheduleId
+                         where r_c_b.StudentId ==1
                          select new ListCourse
                          {
-                             Id = c.CourseId,
+                             Id = c_s.CourseId,
                              C_S = c_s.TeachingScheduleId,
                              Date = c_s.TeachingDate,
                              Slot = c_s.Slot,

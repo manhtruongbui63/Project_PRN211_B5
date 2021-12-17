@@ -8,7 +8,7 @@ namespace Model.Model
 {
     public class ListCourse
     {
-        public int Id { get; set; }
+        public int? Id { get; set; }
         public int C_S { get; set; }
         public DateTime? Date { get; set; }
         public int? Slot { get; set; }
